@@ -4,9 +4,7 @@ import LoadContext from "@/contexts/load-context";
 import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import FlashInfo from "@/components/flash-infos";
-const Flashes = (name) => {
-  return <div className="bg-gray-800 text-gray-300/80 ">{name}</div>;
-};
+
 export default function About() {
   const { isLoaded, setIsLoaded } = useContext(LoadContext);
   console.log(isLoaded);
