@@ -11,7 +11,7 @@ export default function TopBar() {
   }, []);
   return (
     <div
-      className={` max-h-16 text-md bg-black/95 font-sans text-gray-300/80 transition-transform  duration-500  
+      className={` fixed  justify-self-center z-30 max-h-16 text-md bg-black/95 font-sans text-gray-300/90 transition-transform  duration-500  
       [&>*]:p-0.5 [&>*]:cursor-pointer 
       gap-3 p-2 flex justify-center ${isLoaded ? "translate-y-0" : "-translate-y-10"}`}
     >

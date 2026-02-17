@@ -6,7 +6,7 @@ import MainFrame from "@/components/main-frame";
 const LaptopScene = dynamic(() => import("@/components/laptop-scene"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-screen bg-[#0a0a14] flex items-center justify-center">
+    <div className="w-full h-full bg-[#0a0a14] flex items-center justify-center">
       <div className="text-gray-100 font-mono text-md animate-pulse">
         Carregando Portifolio...
       </div>
@@ -17,7 +17,7 @@ const LaptopScene = dynamic(() => import("@/components/laptop-scene"), {
 export default function Page() {
   return (
     <>
-      <div className="flex-row h-dvh w-full bg-black pt-2">
+      <div className="flex-row  scroll- overflow-auto min-h-screen w-full bg-black p-2 pt-">
         <MainFrame />
       </div>
     </>

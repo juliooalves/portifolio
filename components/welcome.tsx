@@ -4,12 +4,18 @@ import LoadContext from "@/contexts/load-context";
 import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import FlashInfo from "@/components/flash-infos";
+import GitSvg from "@/images/github-svgrepo-com.svg";
+import WorkanaSvg from "@/images/Workana/Workana_idV4cO5SuW_1.svg";
+import LinkedinSvg from "@/images/linkedin-161-svgrepo-com.svg";
+import Image from "next/image";
+
+import LinkCard from "@/components/link-card";
 
 export default function About() {
   const { isLoaded, setIsLoaded } = useContext(LoadContext);
   console.log(isLoaded);
   return (
-    <div className="flex-row justify-self-center items-center text-white mt-32  p-2 ">
+    <div className="flex-row min-h-[90%] justify-self-center items-center text-white mt-32  p-2 ">
       <div
         className={` text-white text-[40px] transition-all duration-1000  
         font-sans ${isLoaded ? "translate-x-0 opacity-1" : "-translate-x-[230%] opacity-10"}`}
@@ -35,6 +41,26 @@ export default function About() {
         <FlashInfo name="AppSec" />
         <FlashInfo name="DevSecOps" />
         <FlashInfo name="AI Searcher" />
+      </div>
+      <div className="flex w-full gap-20 relative mt-[22%] justify-start ">
+        <LinkCard
+          platform="GitHub"
+          platformLink="github.com/juliooalves"
+          username="juliooalves"
+          logoPath={GitSvg}
+        />
+        <LinkCard
+          platform="Linkedin"
+          platformLink="www.linkedin.com/in/julio-alves-dev/"
+          username="Júlio Alves"
+          logoPath={LinkedinSvg}
+        />
+        <LinkCard
+          platform="Workana"
+          platformLink="workana.com"
+          username="Júlio Alves"
+          logoPath={WorkanaSvg}
+        />
       </div>
     </div>
   );
