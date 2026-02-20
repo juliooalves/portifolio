@@ -8,25 +8,34 @@ import GitSvg from "@/images/github-svgrepo-com.svg";
 import WorkanaSvg from "@/images/Workana/Workana_idV4cO5SuW_1.svg";
 import LinkedinSvg from "@/images/linkedin-161-svgrepo-com.svg";
 import Image from "next/image";
-
+import { TypeAnimation } from "react-type-animation";
+import { Linkedin, Github, ExternalLink } from "lucide-react";
 import LinkCard from "@/components/link-card";
 
 export default function About() {
   const { isLoaded, setIsLoaded } = useContext(LoadContext);
-  console.log(isLoaded);
   return (
-    <div className="flex-row min-h-[90%] justify-self-center items-center text-white mt-32  p-2 ">
+    <div
+      className="flex-row   w-full md:w-[90%] sm:w-[80%] min-h-[90%] 
+      justify-self-center items-center text-white mt-32  p-2 "
+    >
       <div
-        className={` text-white text-[40px] transition-all duration-1000  
+        className={` text-black dark:text-white text-[40px] transition-all duration-1000  
         font-sans ${isLoaded ? "translate-x-0 opacity-1" : "-translate-x-[230%] opacity-10"}`}
       >
         <p>Hi, Welcome!</p>
         <p className="">I'm Júlio Alves and</p>
-        <p className="!text-green-400 ">
-          This is my portifolio
-          <span className="ml-2 h-8 w-4 inline-block bg-green-500 animate-pulse" />
+        <p className=" text-green-500 dark:!text-green-400 ">
+          This is my
+          <TypeAnimation
+            sequence={[" portiflio", 1000, " prtfoli", 1000, " portifolio"]}
+            speed={10}
+            repeat={0}
+            cursor={true}
+            cursorStyle={{ width: "10px", color: "red" }}
+          />
         </p>
-        <p className="pt-1  !text-[20px] !text-gray-300/85">
+        <p className="pt-1  lg:text-[20px] text-[17px] text-slate-900/90 dark:text-gray-300/85">
           <span className="font-bold">
             Full Stack Developer that has security on his core.
           </span>
@@ -35,31 +44,31 @@ export default function About() {
         </p>
       </div>
 
-      <div className="flex grid-cols-3 mt-3 justify-start gap-7">
-        <FlashInfo name="Hiring Open" />
+      <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-3  mt-3 justify-items-center">
+        <FlashInfo name="Open for Work" />
         <FlashInfo name="Freelancer Open" />
         <FlashInfo name="AppSec" />
         <FlashInfo name="DevSecOps" />
         <FlashInfo name="AI Searcher" />
       </div>
-      <div className="flex w-full gap-20 relative mt-[22%] justify-start ">
+      <div className=" grid lg:grid-cols-3 md:grid-rows-1 sm:grid-cols-1  lg:gap-20 md:gap-10 sm:gap-10  relative mt-[22%] justify-items-center ">
         <LinkCard
-          platform="GitHub"
+          platform="GitHub | "
           platformLink="github.com/juliooalves"
           username="juliooalves"
-          logoPath={GitSvg}
+          Icon=<Github size={20} />
         />
         <LinkCard
-          platform="Linkedin"
+          platform="Linkedin | "
           platformLink="www.linkedin.com/in/julio-alves-dev/"
           username="Júlio Alves"
-          logoPath={LinkedinSvg}
+          Icon={<Linkedin size={20} />}
         />
         <LinkCard
-          platform="Workana"
+          platform="Workana | "
           platformLink="workana.com"
           username="Júlio Alves"
-          logoPath={WorkanaSvg}
+          Icon={<Linkedin size={20} />}
         />
       </div>
     </div>

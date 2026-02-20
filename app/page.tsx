@@ -17,7 +17,7 @@ const LaptopScene = dynamic(() => import("@/components/laptop-scene"), {
 export default function Page() {
   return (
     <>
-      <div className="flex-row  scroll- overflow-auto min-h-screen w-full bg-black p-2 pt-">
+      <div className=" transition-all duration-500 flex-row overflow-auto min-h-screen w-full bg-slate-50 dark:bg-black  p-2  ">
         <MainFrame />
       </div>
     </>

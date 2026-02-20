@@ -4,6 +4,7 @@ import TopBar from "@/components/top-bar";
 import Welcome from "@/components/welcome";
 import About from "@/components/about";
 import Projects from "@/components/projects";
+import Footer from "@/components/footer";
 export default function MainFrame() {
   return (
     <>
@@ -11,6 +12,7 @@ export default function MainFrame() {
       <Welcome />
       <About />
       <Projects />
+      <Footer />
     </>
   );
 }

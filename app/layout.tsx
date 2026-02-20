@@ -1,7 +1,7 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { LoadProvider } from "@/contexts/load-context";
+import { ThemeProvider } from "@/contexts/theme-context";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -9,8 +9,8 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Júlio Alves | Full stack Developer",
-  description: "Interactive 3D spinning laptop built with React Three Fiber",
-  generator: "v0.app",
+  description: "Dynamic portifolio webpage",
+  generator: "Júlio Alves",
 };
 
 export default function RootLayout({
@@ -20,8 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+        />
+      </head>
       <body className="font-sans antialiased">
-        <LoadProvider>{children}</LoadProvider>
+        <ThemeProvider>
+          <LoadProvider>{children}</LoadProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
